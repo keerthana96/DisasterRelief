@@ -40,10 +40,15 @@ function initialize() {
         
         var state = results[1].address_components[2]['long_name'].replace(/ /g,'');
 
-        <?php 
-        session_start();
-        $_SESSION['state'] = "<script>document.write(state)</script>"; 
-        ?>
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (xhttp.readyState == 4 && xhttp.status == 200) {
+            window.location = "volunteer_login.html";
+          }
+        };
+        xhttp.open("GET", "store_state.php?state="+state, true);
+        xhttp.send();
+
       } else {
         alert('No results found');
       }

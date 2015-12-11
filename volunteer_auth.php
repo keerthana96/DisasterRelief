@@ -14,8 +14,11 @@ if(empty($_POST['password']))
 
 $login_username = validate_input($_POST['username']);
 $login_password = sha1(validate_input($_POST['password']));
-// $state = $_SESSION['state'];
-$login_state = 'TamilNadu';
+session_start();
+$login_state = $_SESSION['state'];
+// var_dump($login_state);
+// die();
+// $login_state = 'TamilNadu';
 
 $check=checkLogin($login_username,$login_password,$login_state);
 
