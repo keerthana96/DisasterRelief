@@ -2,8 +2,10 @@
 
 $servername = "localhost";
 $username = "root";
-$password = "opennow";
+$password = "root";
 $states = array("TamilNadu");
+$cities = array("TamilNadu"=>array("Chennai","Trichy"));
+$areas = array("Chennai"=>array("one","two"),"Trichy"=>array("three","four"));
 // Create connection
 $conn = new mysqli($servername, $username, $password);
 // Check connection
@@ -45,4 +47,5 @@ else
 {
     // echo "Error creating table:".$conn->error;
 }
+mysqli_select_db($conn,'India');
 ?>
