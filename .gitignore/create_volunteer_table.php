@@ -2,7 +2,7 @@
 
 $servername = "localhost";
 $username = "root";
-$password = "root";
+$password = "opennow";
 $states = array("TamilNadu");
 // Create connection
 $conn = new mysqli($servername, $username, $password);
@@ -14,11 +14,16 @@ if ($conn->connect_error) {
 // Create database
 $sql = "CREATE DATABASE India";
 
-	if ($conn->query($sql) === TRUE) {
-	    echo "Database created successfully";
-	} else {
-		mysqli_select_db($conn,'India');
-	}
+if ($conn->query($sql) === TRUE) 
+{
+    echo "Database created successfully";
+    mysqli_select_db($conn,'India');
+} 
+else 
+{
+	mysqli_select_db($conn,'India');
+}
+
 foreach ($states as $state)
 {
 
@@ -32,10 +37,12 @@ foreach ($states as $state)
 	)";
 } 
 
-if ($conn->query($sqlt) === TRUE) {
-    echo "Table created successfully";
-} else {
-    //echo "Error creating table:".$conn->error;
+if ($conn->query($sqlt) === TRUE) 
+{
+    echo "\nTable created successfully";
+} 
+else 
+{
+    // echo "Error creating table:".$conn->error;
 }
-$conn->close();
 ?>
