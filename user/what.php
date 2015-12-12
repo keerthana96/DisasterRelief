@@ -31,7 +31,7 @@
     <script type="text/javascript" src="../materialize/js/materialize.min.js"></script>
   </head>
   <body>
-    <?php require('../header.php'); ?>
+    <?php require('../header_user.php'); ?>
   <main>
 <?php
 session_start();
@@ -40,7 +40,7 @@ require("../database/create_volunteer_table.php");
 $sqlur = "SELECT area, requirement FROM ReqInfo WHERE city=\"Chennai\"";
 
 $resu = mysqli_query($conn, $sqlur);
-//echo "<div id=\"req\"> </div>";
+echo "<div id=\"req\">";
 
 if (mysqli_num_rows($resu) > 0) {
 
@@ -48,10 +48,11 @@ if (mysqli_num_rows($resu) > 0) {
     {
         $arr = explode(" ",$row['requirement']);
         $c = $row['area'];
-		 echo "<div id=\"req\"><table class=\"striped centered\">
+			if($row['requirement']!=NULL){
+		 echo "<table class=\"striped centered\">
      <thead>
               <tr>
-                  <th data-field=\"state\">StateName</th>
+                  <th data-field=\"state\">AreaName</th>
                   <th data-field=\"id\">ItemName</th>
                   <th data-field=\"name\">Quantity</th>
               </tr>
@@ -66,11 +67,13 @@ if (mysqli_num_rows($resu) > 0) {
 			echo "<tr><td>".$c."</td><td>".$str[0]."</td><td>".$str[1]."</td></tr>";
 		 	}
 		 }
-		 echo "</tbody></table></div>";
+		 echo "</tbody></table>";
     }
+	}
 } else {
     echo "No Requirements";
 }
+echo "</div>";
 ?>
 </main>
 <?php require('../footer_user.php'); ?>

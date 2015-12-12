@@ -26,13 +26,13 @@
     position: absolute;
     width: 40%;
     left: 30%;
-    top: 20%;
+    top: 35%;
   }
 
   #reqform {
     position: absolute;
     left: 30%;
-    bottom: 25%;
+    top: 10%;
   }
 
   #greetings {
