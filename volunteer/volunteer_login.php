@@ -81,7 +81,6 @@
     </div>
       <button class="btn waves-effect waves-light" type="submit" name="submit">Submit
       </button>
-      <input type="submit" name="submit" value="Submit">
   </form>
 </div>
 </main>

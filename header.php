@@ -16,7 +16,7 @@ echo '<header>
   <li><a href="#!">Profile</a></li>
   <li><a href="#!">Settings</a></li>
   <li class="divider"></li>
-  <li><a href="#!">Logout</a></li>
+  <li><a href="logout.php">Logout</a></li>
 </ul>
 <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="mdi-navigation-menu"></i></a>
 </nav>
