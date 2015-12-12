@@ -2,10 +2,12 @@
 
 $servername = "localhost";
 $username = "root";
+
 $password = "root";
-$states = array("Tamil Nadu");
-$cities = array("Tamil Nadu"=>array("Chennai","Trichy"));
-$areas = array("Chennai"=>array("one","two"),"Trichy"=>array("three","four"));
+$states = array("TamilNadu");
+$cities = array("TamilNadu"=>array("Chennai","Trichy"));
+$areas = array("Chennai"=>array("Chennai","two"),"Trichy"=>array("three","four"));
+
 // Create connection
 $conn = new mysqli($servername, $username, $password);
 // Check connection
