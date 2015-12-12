@@ -15,7 +15,7 @@ if(empty($_POST['password']))
 $login_username = validate_input($_POST['username']);
 $login_password = sha1(validate_input($_POST['password']));
 session_start();
-$login_state = 'TamilNadu';
+$login_state = 'Tamil Nadu';
 // var_dump($login_state);
 // die();
 // $login_state = 'TamilNadu';
@@ -32,7 +32,7 @@ if($check==1)
 }
 else
 {
-	// $errormsg = "Error logging in. Invalid username or password.";
+	 // $errormsg = "Error logging in. Invalid username or password.";
 	header("Location: volunteer_login.html");
 	die();
 }
@@ -46,7 +46,7 @@ function checkLogin($login_username,$login_password,$login_state)
 	require("../database/create_volunteer_table.php");
 	// var_dump($login_state);
 	// die();
-	$auth = "SELECT * FROM ".$login_state." WHERE username = \"".$login_username."\" AND password = \"".$login_password."\"";
+	$auth = "SELECT * FROM VolInfo WHERE username = \"".$login_username."\" AND password = \"".$login_password."\"";
 	 // var_dump($auth);
 	 // die();
 
@@ -64,6 +64,7 @@ function checkLogin($login_username,$login_password,$login_state)
     	session_start();
     	$_SESSION['username']=$login_username;
         $_SESSION['city']=$info[3];
+        $_SESSION['state']=$info[4];
     	// echo "<p>Successfully logged in.</p>";
     	return true;
     }
