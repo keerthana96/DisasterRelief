@@ -85,34 +85,5 @@
 </div>
 </main>
 <?php require('../footer.php'); ?>
-<!-- <h3>Login</h3>
-<form id="login" method="POST" action="volunteer_auth.php">
-	<table>
-		<tr>
-			<span>
-				<td>
-					Username:
-				</td>
-				<td>
-					<input id="username" type="text" name="username" required>
-				</td>
-			</span>
-		</tr>
-		<tr>
-			<span>
-				<td>
-					Password:
-				</td>
-				<td>
-					<input id="password" type="password" name="password" required>
-
-				</td>
-			</span>
-		</tr>
-	</table>
-	<input type="checkbox" name="checkbox" id="showpass" unchecked onclick="showpwd(this);">Show password
-	<br><br>
-	<button type="submit" name="submit">Submit</button>
-	<!--<p id="errormsg"><?php //echo $errormsg?></p>-->
 </body>
 </html>
