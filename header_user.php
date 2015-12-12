@@ -3,6 +3,8 @@
 echo '<header>
 <nav class="teal lighten-2">
   <ul id="slide-out" class="side-nav fixed teal lighten-2">
+  <li><a href="#" class="white-text"><i class="mdi-navigation-menu"></i>  </a></li>
+
   <li><a class="white-text" href="#!">Latest</a></li>
   <li><a class="white-text" href="#!">News</a></li>
   </ul>

@@ -62,8 +62,8 @@ function checkLogin($login_username,$login_password)
     {
     	session_start();
     	$_SESSION['username']=$login_username;
-        $_SESSION['city']=$info[3];
-        $_SESSION['state']=$info[4];
+        $_SESSION['city']=$info[4];
+        $_SESSION['state']=$info[3];
     	// echo "<p>Successfully logged in.</p>";
     	return true;
     }

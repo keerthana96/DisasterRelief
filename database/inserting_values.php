@@ -9,8 +9,8 @@ $cities=array("Chennai","Trichy","Chennai");
 for($i=0;$i<3;$i++)
 {
 
-	$sqlv = "INSERT INTO VolInfo(username,password,city,state)
-	VALUES (\"".$usernames[$i]."\", \"".sha1($passwords[$i])."\", \"".$cities[$i]."\",\"".$state."\")";
+	$sqlv = "INSERT INTO VolInfo(username,password,state,city,contact)
+	VALUES (\"".$usernames[$i]."\", \"".sha1($passwords[$i])."\", \"".$state."\",\"".$cities[$i]."\",\"1234567890\")";
 	if ($conn->query($sqlv) === TRUE) {
 	    echo $i + " New record created successfully";
 	} else {

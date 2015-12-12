@@ -29,6 +29,7 @@
 	function initialize() {
 
 	  city = "<?php echo $_SESSION['city']; ?>";
+	  // alert(city);
 	  var lat;
 	  var lng;
 	  var geocoder = new google.maps.Geocoder;
@@ -75,7 +76,7 @@
 			    if (status === google.maps.GeocoderStatus.OK) {
 			      if (results[1]) {
 
-			        var area = results[1].address_components[1]['long_name'].replace(/ /g,'');
+			        var area = results[1].address_components[0]['long_name'].replace(/ /g,'');
 			        // alert(area);
 
 			        var xhttp = new XMLHttpRequest();

@@ -3,13 +3,12 @@
 $servername = "localhost";
 $username = "root";
 // $password = "root";
-
-$password = "9701c$%";
-//$password = "opennow";
+// $password = "9701c$%";
+$password = "opennow";
 
 $states = array("TamilNadu");
 $cities = array("TamilNadu"=>array("Chennai","Trichy"));
-$areas = array("Chennai"=>array("Chennai","two"),"Trichy"=>array("three","four"));
+$areas = array("Chennai"=>array("Poongavanapuram","two"),"Trichy"=>array("three","four"));
 
 // Create connection
 $conn = new mysqli($servername, $username, $password);
@@ -37,8 +36,10 @@ $sqlt = "CREATE TABLE VolInfo
 	id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 	username VARCHAR(100) NOT NULL,
 	password VARCHAR(100) NOT NULL,
+	state VARCHAR(100) NOT NULL,
 	city VARCHAR(100) NOT NULL,
-	state VARCHAR(100)
+	area VARCHAR(100),
+	contact VARCHAR(20)
 )";
 
 if ($conn->query($sqlt) === TRUE)
