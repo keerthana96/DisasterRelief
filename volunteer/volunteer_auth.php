@@ -21,9 +21,12 @@ $login_state = 'TamilNadu';
 // $login_state = 'TamilNadu';
 
 $check=checkLogin($login_username,$login_password,$login_state);
-
+// var_dump($check);
+// die();
 if($check==1)
 {
+	// var_dump($check);
+	// die();
 	header("Location: volunteer_area.php");
 	die();
 }
@@ -38,10 +41,14 @@ else
 
 function checkLogin($login_username,$login_password,$login_state)
 {
+	// var_dump($login_state);
+	// die();
+	require("../database/create_volunteer_table.php");
+	// var_dump($login_state);
+	// die();
 	$auth = "SELECT * FROM ".$login_state." WHERE username = \"".$login_username."\" AND password = \"".$login_password."\"";
 	 // var_dump($auth);
 	 // die();
-	require("create_volunteer_table.php");
 
 	$result = $conn->query($auth);
     $info = mysqli_fetch_row($result);

@@ -9,7 +9,7 @@ $area = $_SESSION['area'];
 
 $servername = "localhost";
 $username = "root";
-$password = "root";
+$password = "opennow";
 $states = array("TamilNadu");
 $cities = array("TamilNadu"=>array("Chennai","Trichy"));
 $areas = array("Chennai"=>array("one","two"),"Trichy"=>array("three","four"));

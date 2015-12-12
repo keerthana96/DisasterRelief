@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Volunteer Home</title>
-	<script src="http://maps.googleapis.com/maps/api/js"></script>
+  <title>User Home</title>
+  <script src="http://maps.googleapis.com/maps/api/js"></script>
 <script>
 function initialize() {
   
   var center = new google.maps.LatLng(20.593684,78.962880);
   
   var mapProp = {
+
     center: center,
     zoom:5,
+
     mapTypeId:google.maps.MapTypeId.HYBRID
   };
   
@@ -32,8 +34,12 @@ function initialize() {
   marker.setMap(map);
 
   google.maps.event.addListener(marker,'click',function() {
-  getpos=marker.getPosition();
-
+  map.setZoom(8);
+  map.setCenter(marker.getPosition());
+  });
+  i++;
+  }
+/*
    geocoder.geocode({'location': getpos}, function(results, status) {
     if (status === google.maps.GeocoderStatus.OK) {
       if (results[1]) {
@@ -60,45 +66,15 @@ function initialize() {
   // alert(getpos);
   });
   i++;
-  } 
+  }*/ 
 
   
 }
 google.maps.event.addDomListener(window, 'load', initialize);
 
-    
-
-  
-
-  // google.maps.event.addListener(map, 'click', function(event) {
-  //   codeLatLng(event.latLng);
-  // });
-
-// function placeMarker(location) {
-//   var marker = new google.maps.Marker({
-//     position: location,
-//     map: map,
-//   });
-//   // var infowindow = new google.maps.InfoWindow({
-//   //   content: 'Latitude: ' + location.lat() + '<br>Longitude: ' + location.lng()
-//   // });
-//   // infowindow.open(map,marker);
-// }
-
-// function codeLatLng(markerPos) {
-//   geocoder.geocode({'latLng': markerPos}, function(results, status) {
-//     if (status == google.maps.GeocoderStatus.OK) 
-//     {
-//       var markerAddress = results[0].address_components[0].long_name
-//           + ' (type: ' + results[0].address_components[0].types[0] + ')';
-//       alert(markerAddress);
-//     }
-//   });
-// }
- -->
 </script>
 </head>
 <body>
-	 <div id="googleMap" style="width:600px;height:600px;"></div>
+   <div id="googleMap" style="width:600px;height:600px;"></div>
 </body>
 </html>
