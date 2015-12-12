@@ -1,10 +1,29 @@
-<?php
-session_start();
-?>
-
 <html>
 <head>
+  <link rel="stylesheet" type="text/css" href="../materialize/css/materialize.min.css">
+  <link rel="stylesheet" type="text/css" href="../materialize/css/materialize.css">
+  <script src="http://code.angularjs.org/1.2.13/angular.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+  <style type="text/css">
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+  li a.white-text {
+    font-size: 30px;
+  }
+  </style>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script type="text/javascript" src="../materialize/js/materialize.min.js"></script>
+
   <title>Volunteer Home</title>
+  <?php session_start();?>
   <script src="http://maps.googleapis.com/maps/api/js"></script>
 	<script>
 	function initialize() {
@@ -96,10 +115,24 @@ session_start();
 	</script>
 </head>
 <body>
-	<p> Hi <?php echo $_SESSION['username']; ?>!</p>
-	<p> Your state is <?php echo "TamilNadu";//echo $_SESSION['state']; ?>!</p>
-	<p> You live in <?php echo $_SESSION['city']; ?>!</p>
-    <div id="googleMap" style="width:600px;height:600px;"></div>
+ <?php require('../user.php'); ?> <br><br>
+  <main>
+    <div class="row">
+    <br><br>
+   <div id="googleMap" style="width:600px;height:500px;display: inline-block;left:300px" ></div>
+    <div id="info" style="width:400px;height:500px;display:inline-block;float:right;">
+         
+        <span id="content" style="text-align:center;position:relative;top:20%;color:#4db6ac;font-size:20px;">
+        <p> Hi <?php echo $_SESSION['username']; ?>!</p>
+		<p> Your state is <?php echo $_SESSION['state']; ?>!</p>
+		<p> You live in <?php echo $_SESSION['city']; ?>!</p>
+		<p> Select the area where supply requirements need to be updated </p>
+        </span >
+        
+    </div>
+</div>
+</main>
+<?php require('../footer.php'); ?>    
     <!--<a href="volunteer_area_part2.php"><button> Go Ahead </button></a>-->
 </body>
 </html>
