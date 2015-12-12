@@ -31,7 +31,7 @@
     <script type="text/javascript" src="../materialize/js/materialize.min.js"></script>
   </head>
   <body>
-    <?php require('../header.php'); ?>
+    <?php require('../header_user.php'); ?>
   <main>
 <?php
 session_start();
