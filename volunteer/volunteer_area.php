@@ -27,7 +27,7 @@
   <script src="http://maps.googleapis.com/maps/api/js"></script>
 	<script>
 	function initialize() {
-	
+
 	  city = "<?php echo $_SESSION['city']; ?>";
 	  var lat;
 	  var lng;
@@ -36,7 +36,7 @@
 	  geocoder.geocode({'address': city}, function(results, status) {
 	    if (status === google.maps.GeocoderStatus.OK) {
 	      if (results[0]) {
-	        
+
 	        lat = results[0].geometry.location.lat();
 	        lng = results[0].geometry.location.lng();
 	        // alert(lat+" "+lng);
@@ -44,23 +44,23 @@
 			  // results[0].address_components[3]['long_name'] = city;
 
 			  var center = new google.maps.LatLng(lat,lng);
-			  
+
 			  // var center = new google.maps.LatLng(20.593684,78.962880);
-			  
+
 			  var mapProp = {
 			    center: center,
 			    zoom:11,
 			    mapTypeId:google.maps.MapTypeId.HYBRID
 			  };
-			  
+
 			  var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
 
 			  areas = [[lat,lng]]; //get lat and lng af all major areas of the city and store in array areas
-			  
+
 			  i=0;
-			  
+
 			  while(areas[i])
-			  { 
+			  {
 			    var pos = new google.maps.LatLng(areas[i][0],areas[i][1]);
 			    var marker=new google.maps.Marker({
 			     position:pos,
@@ -74,7 +74,7 @@
 			   geocoder.geocode({'location': getpos}, function(results, status) {
 			    if (status === google.maps.GeocoderStatus.OK) {
 			      if (results[1]) {
-			        
+
 			        var area = results[1].address_components[1]['long_name'].replace(/ /g,'');
 			        // alert(area);
 
@@ -90,7 +90,7 @@
 			      } else {
 			        alert('No results found');
 			      }
-			    } 
+			    }
 			    else {
 			    alert('Geocoder failed due to: ' + status);
 			    }
@@ -99,7 +99,7 @@
 			  // alert(getpos);
 			  });
 			  i++;
-			  } 
+			  }
 			}
 	      else {
 	      alert('No results found');
@@ -115,24 +115,24 @@
 	</script>
 </head>
 <body>
- <?php require('../user.php'); ?> <br><br>
+ <?php require('../header.php'); ?> <br><br>
   <main>
     <div class="row">
     <br><br>
    <div id="googleMap" style="width:600px;height:500px;display: inline-block;left:300px" ></div>
     <div id="info" style="width:400px;height:500px;display:inline-block;float:right;">
-         
+
         <span id="content" style="text-align:center;position:relative;top:20%;color:#4db6ac;font-size:20px;">
         <p> Hi <?php echo $_SESSION['username']; ?>!</p>
 		<p> Your state is <?php echo $_SESSION['state']; ?>!</p>
 		<p> You live in <?php echo $_SESSION['city']; ?>!</p>
 		<p> Select the area where supply requirements need to be updated </p>
         </span >
-        
+
     </div>
 </div>
 </main>
-<?php require('../footer.php'); ?>    
+<?php require('../footer.php'); ?>
     <!--<a href="volunteer_area_part2.php"><button> Go Ahead </button></a>-->
 </body>
 </html>
