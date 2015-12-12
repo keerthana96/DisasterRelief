@@ -8,8 +8,8 @@ foreach($states as $state)
 		// echo $city;
 		foreach($areas[$city] as $area)
 		{
-			$sqla = "INSERT INTO ".$state."Info(city, area)
-			VALUES (\"".$city."\", \"".$area."\")";
+			$sqla = "INSERT INTO ReqInfo(state,city, area)
+			VALUES (\"".$state."\",\"".$city."\", \"".$area."\")";
 			if ($conn->query($sqla) === TRUE) {
 		    echo $area." N\new record created successfully";
 			} else 

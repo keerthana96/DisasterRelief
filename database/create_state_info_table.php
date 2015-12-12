@@ -2,7 +2,8 @@
 require("create_volunteer_table.php");
 foreach ($states as $state1)
 {
-	$sqlc = "CREATE TABLE ".$state1."Info (
+	$sqlc = "CREATE TABLE ReqInfo (
+	state VARCHAR(100) NOT NULL,
 	city VARCHAR(100) NOT NULL,
 	area VARCHAR(50) PRIMARY KEY,
 	requirement TEXT(700)
