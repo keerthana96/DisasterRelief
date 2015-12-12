@@ -2,8 +2,7 @@
 
 $servername = "localhost";
 $username = "root";
-
-$password = "root";
+$password = "9701c$%";
 $states = array("TamilNadu");
 $cities = array("TamilNadu"=>array("Chennai","Trichy"));
 $areas = array("Chennai"=>array("Chennai","two"),"Trichy"=>array("three","four"));
@@ -19,18 +18,17 @@ if ($conn->connect_error)
 // Create database
 $sql = "CREATE DATABASE India";
 
-if ($conn->query($sql) === TRUE) 
+if ($conn->query($sql) === TRUE)
 {
     echo "Database created successfully";
     mysqli_select_db($conn,'India');
-} 
-else 
+}
+else
 {
 	mysqli_select_db($conn,'India');
 }
 
-
-$sqlt = "CREATE TABLE VolInfo 
+$sqlt = "CREATE TABLE VolInfo
 (
 	id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 	username VARCHAR(100) NOT NULL,
@@ -39,12 +37,11 @@ $sqlt = "CREATE TABLE VolInfo
 	state VARCHAR(100)
 )";
 
-
-if ($conn->query($sqlt) === TRUE) 
+if ($conn->query($sqlt) === TRUE)
 {
     echo "\nTable created successfully";
-} 
-else 
+}
+else
 {
     // echo "Error creating table:".$conn->error;
 }
