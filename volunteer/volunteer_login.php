@@ -28,7 +28,7 @@
   </style>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script type="text/javascript" src="../materialize/js/materialize.min.js"></script>
-	<!-- <script type="text/javascript">
+	<script type="text/javascript">
 	function showpwd(obj)
 	{
 		if(obj.checked)
@@ -36,7 +36,31 @@
 		else
 			document.getElementById("password").type='password';
 	}
-	</script> -->
+  function submitform()
+	{
+		username = document.getElementById("username").value;
+		password = document.getElementById("password").value;
+		// alert(username+' '+password);
+		$.ajax({
+			  method: "POST",
+			  url: "volunteer_auth.php",
+			  data: { username :username,
+			  password :password },
+			  success: function(){alert("hi")},
+				 error: function(){
+				   alert('failure');
+				 }
+		}).done(function( check ) {
+			    // modalInject($.parseJSON(msg));
+			    alert("hi");
+			    alert(check);
+			    if(check==1)
+			    	window.location = "volunteer_area.php";
+				else
+					window.location = "volunteer_login.php";
+		});
+	}
+	</script>
 </head>
 <body>
   <?php require('../header.php'); ?>
@@ -45,18 +69,19 @@
   <form class="col s6 right" id="login" method="POST" action="volunteer_auth.php">
     <div class="row">
       <div class="input-field col s6">
-        <input id="first_name" type="text" class="validate">
-        <label for="first_name">User Name</label>
+        <input name="username" type="text" class="validate" required>
+        <label for="username">User Name</label>
       </div>
     </div>
     <div class="row">
       <div class="input-field col s6">
-        <input id="password" type="password" class="validate">
+        <input name="password" type="password" class="validate" required>
         <label for="password">Password</label>
       </div>
     </div>
       <button class="btn waves-effect waves-light" type="submit" name="submit">Submit
       </button>
+      <input type="submit" name="submit" value="Submit">
   </form>
 </div>
 </main>

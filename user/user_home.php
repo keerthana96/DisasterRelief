@@ -21,7 +21,8 @@ function initialize() {
   var geocoder = new google.maps.Geocoder;
 
   states = [[11.00,78.00]];
-  
+  cities = [[13.0827,80.2707]]; 
+
   i=0;
   
   while(states[i])
@@ -34,25 +35,32 @@ function initialize() {
   marker.setMap(map);
 
   google.maps.event.addListener(marker,'click',function() {
-  map.setZoom(8);
+  map.setZoom(7);
   map.setCenter(marker.getPosition());
-  });
-  i++;
-  }
-/*
-   geocoder.geocode({'location': getpos}, function(results, status) {
+  var citypos = new google.maps.LatLng(cities[0][0],cities[0][1]);
+  marker.setPosition(citypos);
+
+  google.maps.event.addListener(marker,'click',function() {
+  map.setZoom(12);
+  getpos = marker.getPosition();
+  map.setCenter(getpos);
+  marker.setMap(null);
+
+  geocoder.geocode({'location': getpos}, function(results, status) {
     if (status === google.maps.GeocoderStatus.OK) {
       if (results[1]) {
         
-        var state = results[1].address_components[2]['long_name'].replace(/ /g,'');
+        var city = results[1].address_components[1]['long_name'].replace(/ /g,'');
+
+        // alert(city);
 
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
           if (xhttp.readyState == 4 && xhttp.status == 200) {
-            window.location = "volunteer_login.html";
+            //create div here
           }
         };
-        xhttp.open("GET", "store_state.php?state="+state, true);
+        xhttp.open("GET", "user_city.php?cityname="+city, true);
         xhttp.send();
 
       } else {
@@ -63,11 +71,15 @@ function initialize() {
     }
   });
 
-  // alert(getpos);
+  <?php
+    //get city name
+    //compare with reqinfo and display all reqs of all areas of the city in descending order in a div next to(or below) the map
+  ?>
+  });
+
   });
   i++;
-  }*/ 
-
+  }
   
 }
 google.maps.event.addDomListener(window, 'load', initialize);
