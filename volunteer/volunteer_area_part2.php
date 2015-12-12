@@ -5,7 +5,7 @@
 echo "
 <html>
 <p> Hi ".$_SESSION['username']."!</p>
-<p>You are from".$_SESSION['state']."!</p>
+<p>You are from ".$_SESSION['state']."!</p>
 <p> You live in ".$_SESSION['city']."!</p>
 <p> You live in ".$_SESSION['area']."! </p>";
 
