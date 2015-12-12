@@ -15,7 +15,7 @@ if(empty($_POST['password']))
 $login_username = validate_input($_POST['username']);
 $login_password = sha1(validate_input($_POST['password']));
 session_start();
-$login_state = $_SESSION['state'];
+$login_state = 'TamilNadu';
 // var_dump($login_state);
 // die();
 // $login_state = 'TamilNadu';
@@ -39,11 +39,12 @@ else
 function checkLogin($login_username,$login_password,$login_state)
 {
 	$auth = "SELECT * FROM ".$login_state." WHERE username = \"".$login_username."\" AND password = \"".$login_password."\"";
-	// var_dump($auth);
-	// die();
+	 // var_dump($auth);
+	 // die();
 	require("create_volunteer_table.php");
 
 	$result = $conn->query($auth);
+    $info = mysqli_fetch_row($result);
  	// var_dump($result);
 	// die();
     if(!$result || mysqli_num_rows($result) <= 0)
@@ -54,7 +55,8 @@ function checkLogin($login_username,$login_password,$login_state)
     elseif ( mysqli_num_rows($result) == 1)
     {
     	session_start();
-    	$_SESSION['username']=$username;
+    	$_SESSION['username']=$login_username;
+        $_SESSION['city']=$info[3];
     	// echo "<p>Successfully logged in.</p>";
     	return true;
     }
@@ -71,4 +73,14 @@ function validate_input($data) {
    return $data;
 }
 
-?>
+/*
+ //$sqlgc = "SELECT * FROM ".$login_state." WHERE username=\"".$login_username."\"";
+        // var_dump($sqlgc);
+        // die();
+        //$getcity = mysqli_query($conn,$auth);
+       /* var_dump($result);
+        die();
+        $gotcity=mysqli_fetch_field($getcity)->city;
+        var_dump($gotcity);
+        die();
+        echo $gotcity;*/ ?>
