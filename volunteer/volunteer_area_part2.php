@@ -25,7 +25,6 @@
   #req {
     position: absolute;
     width: 40%;
-    height: 40%;
     left: 30%;
     top: 20%;
   }
@@ -85,13 +84,13 @@ $req = $infor[3];
 
 
 
-
-
+        if($arr){
  foreach($arr as $block)
  {
 	$str = explode(":",$block);
 	echo "<tr> <td>".$str[0]."</td><td>".$str[1]."</td></tr>";
  }
+}
  echo "</tbody></table></div>";
 ?>
 <form id="reqform"class="col s12 right" id="login" method="POST" action="update_info.php">

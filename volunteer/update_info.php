@@ -37,9 +37,13 @@ $info = mysqli_fetch_row($res);
 // die();
 $requirement = $info[3];
 if(!empty($_POST['item']) && !empty($_POST['quantity']))
-
+{
+	if($requirement)
 $requirement = $requirement." ".$_POST['item'].":".$_POST['quantity'];
-// var_dump($requirement);
+else
+$requirement = $_POST['item'].":".$_POST['quantity'];
+
+}// var_dump($requirement);
 // die();
 $update = "UPDATE ReqInfo SET requirement = \"".$requirement."\" WHERE city = \"".$city."\" AND area = \"".$area."\"";
 // var_dump($update);
