@@ -1,12 +1,13 @@
 <?php
 // echo "heyo";
+
 session_start();
 $state = "TamilNadu";
 $city = $_SESSION['city'];
 $area = $_SESSION['area'];
 // var_dump($city);
 // die();
-
+/*
 $servername = "localhost";
 $username = "root";
 $password = "root";
@@ -23,6 +24,9 @@ if ($conn->connect_error) {
 mysqli_select_db($conn,'India');
 // var_dump($conn);
 // die();
+*/
+require("../database/create_volunteer_table.php");
+//require("../database/create_state_info_table.php");
 $sqlca = "SELECT * FROM ReqInfo WHERE city=\"".$city."\" AND area=\"".$area."\"";
 // var_dump($sqlca);
 // die();
@@ -40,5 +44,8 @@ $update = "UPDATE ReqInfo SET requirement = \"".$requirement."\" WHERE city = \"
 // die();
 $done = $conn->query($update);
 if($done)
+{
 echo "success";
+header("Location:volunteer_area_part2.php");
+}
 ?>
