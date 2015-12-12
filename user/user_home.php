@@ -42,8 +42,35 @@ function initialize() {
 
   google.maps.event.addListener(marker,'click',function() {
   map.setZoom(12);
-  map.setCenter(marker.getPosition());
+  getpos = marker.getPosition();
+  map.setCenter(getpos);
   marker.setMap(null);
+
+  geocoder.geocode({'location': getpos}, function(results, status) {
+    if (status === google.maps.GeocoderStatus.OK) {
+      if (results[1]) {
+        
+        var city = results[1].address_components[1]['long_name'].replace(/ /g,'');
+
+        // alert(city);
+
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (xhttp.readyState == 4 && xhttp.status == 200) {
+            //create div here
+          }
+        };
+        xhttp.open("GET", "user_city.php?cityname="+city, true);
+        xhttp.send();
+
+      } else {
+        alert('No results found');
+      }
+    } else {
+      alert('Geocoder failed due to: ' + status);
+    }
+  });
+
   <?php
     //get city name
     //compare with reqinfo and display all reqs of all areas of the city in descending order in a div next to(or below) the map

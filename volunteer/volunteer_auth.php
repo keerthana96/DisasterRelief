@@ -1,5 +1,4 @@
 <?php
-
 if(empty($_POST['username']))
 {
     $this->HandleError("UserName is empty!");
@@ -15,12 +14,11 @@ if(empty($_POST['password']))
 $login_username = validate_input($_POST['username']);
 $login_password = sha1(validate_input($_POST['password']));
 session_start();
-$login_state = 'Tamil Nadu';
 // var_dump($login_state);
 // die();
 // $login_state = 'TamilNadu';
 
-$check=checkLogin($login_username,$login_password,$login_state);
+$check=checkLogin($login_username,$login_password);
 // var_dump($check);
 // die();
 if($check==1)
@@ -36,10 +34,11 @@ else
 	header("Location: volunteer_login.html");
 	die();
 }
+
 // echo $check;
 // echo $username." ".$password." ".$state." ";
 
-function checkLogin($login_username,$login_password,$login_state)
+function checkLogin($login_username,$login_password)
 {
 	// var_dump($login_state);
 	// die();
