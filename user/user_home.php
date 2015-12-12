@@ -166,6 +166,6 @@ google.maps.event.addDomListener(window, 'load', initialize);
     </div>
 </div>
 </main>
-<?php require('../footer.php'); ?>
+<?php require('../footer_user.php'); ?>
 </body>
 </html>
