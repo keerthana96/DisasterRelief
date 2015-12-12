@@ -87,7 +87,7 @@
 </div>
 </main>
 
-<?php require('../footer_user.php'); ?>
+<?php require('../footer.php'); ?>
 <!-- <h3>Login</h3>
 <form id="login" method="POST" action="volunteer_auth.php">
 	<table>
