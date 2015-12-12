@@ -2,7 +2,7 @@
 
 $servername = "localhost";
 $username = "root";
-$password = "opennow";
+$password = "9701c$%";
 $states = array("TamilNadu");
 $cities = array("TamilNadu"=>array("Chennai","Trichy"));
 $areas = array("Chennai"=>array("Chennai","two"),"Trichy"=>array("three","four"));
