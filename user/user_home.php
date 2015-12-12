@@ -1,17 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-#req 
-{
-  width:600px;
-  height:600px;
-  display:inline-block;
-  background:red;
-  float:right;
-}
 
-</style>
+ <link rel="stylesheet" type="text/css" href="../materialize/css/materialize.min.css">
+  <link rel="stylesheet" type="text/css" href="../materialize/css/materialize.css">
+  <script src="http://code.angularjs.org/1.2.13/angular.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+  <style type="text/css">
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+  #login {
+    position:absolute;
+    right: 5%;
+    bottom: 40%;
+  }
+
+  li a.white-text {
+    font-size: 30px;
+  }
+  </style>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script type="text/javascript" src="../materialize/js/materialize.min.js"></script>
   <title>User Home</title>
   <?php session_start(); ?>
   <script src="http://maps.googleapis.com/maps/api/js"></script>
@@ -51,6 +68,7 @@ function initialize() {
   map.setCenter(marker.getPosition());
   var citypos = new google.maps.LatLng(cities[0][0],cities[0][1]);
   marker.setPosition(citypos);
+  document.getElementById("he").innerHTML="Click on the CITY which you would like to view relief information about.";
 
   google.maps.event.addListener(marker,'click',function() {
   map.setZoom(12);
@@ -135,6 +153,19 @@ google.maps.event.addDomListener(window, 'load', initialize);
 </script>
 </head>
 <body>
-   <div id="googleMap" style="width:600px;height:600px;display: inline-block;"></div>
-   <div id="req" style="width:600px;height:600px;background:red;display:none;"></div>
+ <?php require('../header_user.php'); ?> <br><br>
+  <main>
+    <div class="row">
+    <br><br>
+   <div id="googleMap" style="width:600px;height:500px;display: inline-block;left:300px" ></div>
+    <div id="info" style="width:400px;height:500px;display:inline-block;float:right;">
+        <h4 style="color:#4db6ac;text-shadow: 2px 2px black;"> Relief Management 
+        </h4> 
+        <h6 id="he">Click on the STATE for which you would like to view relief information about. </h6>
+        
+    </div>
+</div>
+</main>
+<?php require('../footer.php'); ?>
 </body>
+</html>
