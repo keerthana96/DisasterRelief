@@ -1,7 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style>
+#req 
+{
+  width:600px;
+  height:600px;
+  display:inline-block;
+  background:red;
+  float:right;
+}
+
+</style>
   <title>User Home</title>
+  <?php session_start(); ?>
   <script src="http://maps.googleapis.com/maps/api/js"></script>
 <script>
 function initialize() {
@@ -57,7 +69,43 @@ function initialize() {
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
           if (xhttp.readyState == 4 && xhttp.status == 200) {
-            //create div here
+            window.location = "what.php";
+            // alert("ready");
+            // arr = "<?php echo $_SESSION['city']; ?>";
+            
+            // alert(arr);
+            //<?php
+            // alert("<?php echo $_SESSION[\'city\'] ?>");
+//         session_start();
+//         require("../database/create_volunteer_table.php");
+//         var_dump($_SESSION['city']);
+// die();
+//         // // $sqlur = "SELECT * FROM ReqInfo WHERE city=\"".$_SESSION['city']."\" ";
+        // $sqlur = "SELECT requirement FROM ReqInfo WHERE city=\"Chennai\"";
+
+        // $resu = mysqli_query($conn, $sqlur);
+        // echo "<div id=\"req\"> </div>";
+
+        // if (mysqli_num_rows($resu) > 0) {
+           
+        //     while($row = mysqli_fetch_assoc($resu)) 
+        //     {
+        //         $arr = explode(" ",$row['requirement']);
+        //      echo "<table>";
+        //      foreach($arr as $block)
+        //      {
+        //       $str = explode(":",$block);
+        //       echo "<tr> <td>".$str[0]."</td><td>".$str[1]."</td></tr>"; 
+        //      }
+        //      echo "</table>";
+
+
+
+        //     }
+        // } else {
+        //     echo "No Requirements";
+        // }
+//?>
           }
         };
         xhttp.open("GET", "user_city.php?cityname="+city, true);
@@ -87,6 +135,6 @@ google.maps.event.addDomListener(window, 'load', initialize);
 </script>
 </head>
 <body>
-   <div id="googleMap" style="width:600px;height:600px;"></div>
+   <div id="googleMap" style="width:600px;height:600px;display: inline-block;"></div>
+   <div id="req" style="width:600px;height:600px;background:red;display:none;"></div>
 </body>
-</html>
