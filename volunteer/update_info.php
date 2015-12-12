@@ -10,7 +10,8 @@ $area = $_SESSION['area'];
 /*
 $servername = "localhost";
 $username = "root";
-$password = "root";
+$password = "9701c$%";
+>>>>>>> Stashed changes
 $states = array("TamilNadu");
 $cities = array("TamilNadu"=>array("Chennai","Trichy"));
 $areas = array("Chennai"=>array("one","two"),"Trichy"=>array("three","four"));
@@ -31,11 +32,12 @@ $sqlca = "SELECT * FROM ReqInfo WHERE city=\"".$city."\" AND area=\"".$area."\""
 // var_dump($sqlca);
 // die();
 $res = $conn->query($sqlca);
-$info = mysqli_fetch_row($res); 
+$info = mysqli_fetch_row($res);
 // var_dump($info);
 // die();
 $requirement = $info[3];
-if(!empty($_POST['item']) && !empty($_POST['quantity'])) 
+if(!empty($_POST['item']) && !empty($_POST['quantity']))
+
 $requirement = $requirement." ".$_POST['item'].":".$_POST['quantity'];
 // var_dump($requirement);
 // die();

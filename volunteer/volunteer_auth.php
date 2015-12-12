@@ -31,7 +31,7 @@ if($check==1)
 else
 {
 	 // $errormsg = "Error logging in. Invalid username or password.";
-	header("Location: volunteer_login.html");
+	header("Location: volunteer_login.php");
 	die();
 }
 
