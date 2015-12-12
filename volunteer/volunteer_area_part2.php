@@ -1,5 +1,6 @@
 
-<?php  session_start(); ?>
+<?php  
+session_start(); ?>
 <html>
 <p> Hi <?php echo $_SESSION['username']; ?>!</p>
 <p> You live in <?php echo $_SESSION['city']; ?>!</p>
