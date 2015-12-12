@@ -3,7 +3,6 @@ session_start();
 ?>
 
 <html>
-
 <head>
   <title>Volunteer Home</title>
   <script src="http://maps.googleapis.com/maps/api/js"></script>
@@ -58,7 +57,7 @@ session_start();
 			      if (results[1]) {
 			        
 			        var area = results[1].address_components[1]['long_name'].replace(/ /g,'');
-			        alert(area);
+			        // alert(area);
 
 			        var xhttp = new XMLHttpRequest();
 			        xhttp.onreadystatechange = function() {
