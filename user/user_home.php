@@ -163,6 +163,15 @@ google.maps.event.addDomListener(window, 'load', initialize);
         </h4>
         <h6 id="he">Click on the STATE for which you would like to view relief information about. </h6>
 
+        <p> Our Aim is to spread the relief supplies as uniformly as possible to <br>
+        <ul> <li> 1. Ensure that all those who need the most have been provided with </li>
+        <li> 2. To prevent wastage of supplies </li>
+        </ul>
+        Help those in need! :) <br>
+        Spread the love ^_^ <br>
+
+        </p>
+
     </div>
 </div>
 </main>

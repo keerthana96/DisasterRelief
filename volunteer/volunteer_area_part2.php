@@ -78,9 +78,10 @@ $(document).ready(function() {
 echo "
 <div id=\"greetings\">
 <p> Hi ".$_SESSION['username']."!</p>
-<p>You are from ".$_SESSION['state']."!</p>
-<p> You live in ".$_SESSION['city']."!</p>
-<p> You live in ".$_SESSION['area']."! </p>
+<p>State: ".$_SESSION['state']."!</p>
+<p> City: ".$_SESSION['city']."!</p>
+<p> Area: ".$_SESSION['area']."! </p>
+
 </div>";
 
 require("../database/create_volunteer_table.php");
