@@ -27,7 +27,7 @@
   }
 
   li a.white-text {
-    font-size: 23px;
+    font-size: 20px;
   }
   </style>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
