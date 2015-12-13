@@ -125,9 +125,9 @@
 
         <span id="content" style="text-align:center;position:relative;top:20%;color:#4db6ac;font-size:20px;">
         <p> Hi <?php echo $_SESSION['username']; ?>!</p>
-		<p> Your state is <?php echo $_SESSION['state']; ?>!</p>
-		<p> You live in <?php echo $_SESSION['city']; ?>!</p>
-		<p> Select the area where supply requirements need to be updated </p>
+		<p> State: <?php echo $_SESSION['state']; ?>!</p>
+		<p> City: <?php echo $_SESSION['city']; ?>!</p>
+		<p> Select the area that you have been assigned by the admin </p>
         </span >
 
     </div>
