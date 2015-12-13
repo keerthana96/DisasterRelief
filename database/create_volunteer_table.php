@@ -3,7 +3,13 @@
 $servername = "localhost";
 $username = "root";
 // $password = "root";
-$password = "9701c$%";
+<<<<<<< Updated upstream
+
+$password = "root";
+
+=======
+$password = "root";
+>>>>>>> Stashed changes
 $states = array("TamilNadu");
 $cities = array("TamilNadu"=>array("Chennai","Trichy"));
 $areas = array("Chennai"=>array("Poongavanapuram","two"),"Trichy"=>array("three","four"));
