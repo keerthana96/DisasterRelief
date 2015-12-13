@@ -45,12 +45,30 @@
   }
 
   li a.white-text {
-    font-size: 30px;
+    font-size: 23px;
   }
 
   </style>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script type="text/javascript" src="../materialize/js/materialize.min.js"></script>
+  <script type="text/javascript">
+
+
+$(document).ready(function() {
+        $('#button').click(function() {
+
+         $.ajax({
+          type: "POST",
+          url: "drop.php"
+        }).done(function() {
+          // alert("dropped");
+          // alert( "Data Saved: " + msg );
+          location.reload();
+        });    
+
+    });
+      });
+  </script>
 </head>
 <body>
   <?php require('../header.php'); ?>
@@ -66,6 +84,7 @@ echo "
 </div>";
 
 require("../database/create_volunteer_table.php");
+
 $sqlpr = "SELECT * FROM ReqInfo WHERE city=\"".$_SESSION['city']."\" AND area=\"".$_SESSION['area']."\"";
 // var_dump($sqlpr);
 // die();
@@ -106,7 +125,7 @@ $req = $infor[3];
   </div>
     <button class="btn waves-effect waves-light" type="submit" name="submit"><i class="mdi-content-add"></i>
     </button>
-    <button class="btn waves-effect waves-light" type="button" name="button"><i class="mdi-content-archive"></i>
+    <button class="btn waves-effect waves-light" type="button" name="button" id="button"><i class="mdi-content-archive"></i>
     </button>
 </form>
 <!-- <form id="login" method="POST" action="update_info.php">
