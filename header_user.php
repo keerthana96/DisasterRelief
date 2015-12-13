@@ -3,12 +3,10 @@
 echo '<header>
 <nav class="teal lighten-2">
   <ul id="slide-out" class="side-nav fixed teal lighten-2">
-
   <li><a href="#" class="white-text"><i class="mdi-navigation-menu"></i>  </a></li>
-
-  <li><a class="white-text" href="#!">Warnings</a></li>
-
-  <li><a class="white-text" href="#!">News</a></li>
+  <li><a class="white-text" href="#!"><i class="small mdi-content-report"></i>  Warnings</a></li>
+  <li><a class="white-text" href="#!"><i class="small mdi-content-sort"></i>  News</a></li>
+  <li><a class="white-text" href="#!"><i class="small mdi-communication-forum"></i>  Discussions</a></li>
   </ul>
 <ul class="right">
   <li><a class="dropdown-button" href="#!" data-activates="dropdown1">
@@ -20,5 +18,4 @@ echo '<header>
 <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="mdi-navigation-menu"></i></a>
 </nav>
 </header>';
-t
 ?>
