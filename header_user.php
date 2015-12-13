@@ -10,7 +10,6 @@ echo '<header>
   </ul>
 <ul class="right">
   <li><a class="dropdown-button" href="#!" data-activates="dropdown1">
- 
   </a>
   </li>
 </ul>

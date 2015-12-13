@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>Volunteer Login</title>
+	<title>Update Requirements</title>
   <link rel="stylesheet" type="text/css" href="../materialize/css/materialize.min.css">
   <link rel="stylesheet" type="text/css" href="../materialize/css/materialize.css">
   <script src="http://code.angularjs.org/1.2.13/angular.js"></script>
@@ -64,7 +64,7 @@ $(document).ready(function() {
           // alert("dropped");
           // alert( "Data Saved: " + msg );
           location.reload();
-        });    
+        });
 
     });
       });
@@ -125,7 +125,11 @@ $req = $infor[3];
   </div>
     <button class="btn waves-effect waves-light" type="submit" name="submit"><i class="mdi-content-add"></i>
     </button>
+<<<<<<< Updated upstream
     <button class="btn waves-effect waves-light" type="button" name="button" id="button"><i class="mdi-content-archive"></i>
+=======
+    <button class="btn waves-effect waves-light" type="button" name="button"><i class="mdi-content-archive"></i>
+>>>>>>> Stashed changes
     </button>
 </form>
 <!-- <form id="login" method="POST" action="update_info.php">
