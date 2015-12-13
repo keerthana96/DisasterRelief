@@ -45,7 +45,7 @@
   }
 
   li a.white-text {
-    font-size: 23px;
+    font-size: 20px;
   }
 
   </style>

@@ -7,6 +7,8 @@ echo '<header>
   <li><a class="white-text" href="#!"><i class="small mdi-content-report"></i>  Warnings</a></li>
   <li><a class="white-text" href="#!"><i class="small mdi-content-sort"></i>  News</a></li>
   <li><a class="white-text" href="#!"><i class="small mdi-communication-forum"></i>  Discussions</a></li>
+  <li><a class="white-text" href="#!"><i class="small mdi-communication-invert-colors-on"></i>  Stay Safe</a></li>
+  <li><a class="white-text" href="#!"><i class="small mdi-action-settings-remote"></i>  HospiConnect</a></li>
   </ul>
 <ul class="right">
   <li><a class="dropdown-button" href="#!" data-activates="dropdown1">

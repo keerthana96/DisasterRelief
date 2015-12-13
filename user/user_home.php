@@ -24,7 +24,7 @@
   }
 
   li a.white-text {
-    font-size: 23px;
+    font-size: 20px;
   }
   </style>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -165,12 +165,12 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
         <p> Our Aim is to spread the relief supplies as uniformly as possible to <br>
         <ul> <li> 1. Ensure that all those who need the most have been provided with </li>
-        <li> 2. To prevent wastage of supplies </li>
+        <li> 2. Prevent wastage of supplies </li>
         </ul>
         Help those in need! :) <br>
+        Help in the best way possible :D <br>
         Spread the love ^_^ <br>
-
-        </p>
+      </p>
 
     </div>
 </div>
