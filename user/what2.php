@@ -41,11 +41,13 @@ $sqlur = "SELECT area, requirement FROM ReqInfo WHERE city=\"Chennai\"";
 
 $resu = mysqli_query($conn, $sqlur);
 echo "<div id=\"req\">";
-
+$ro = mysqli_fetch_assoc($resu);
 if (mysqli_num_rows($resu) > 0) {
+  
 
     while($row = mysqli_fetch_assoc($resu))
     {
+        
         $arr = explode(" ",$row['requirement']);
         $c = $row['area'];
         $sqli = "SELECT * from VolInfo WHERE area=\"".$c."\"";
@@ -53,15 +55,15 @@ if (mysqli_num_rows($resu) > 0) {
         $r =mysqli_fetch_assoc($ree);
         $u = $r['username'];
         $n = $r['contact'];
+        echo "<h6> Area : ".$c."<br>Username:".$u."<br>Contact:".$n."</h6>";
 			if($row['requirement']!=NULL){
 		 echo "<table class=\"striped centered\">
      <thead>
               <tr>
-                  <th data-field=\"state\">AreaName</th>
+                 
                   <th data-field=\"id\">ItemName</th>
                   <th data-field=\"name\">Quantity</th>
-                  <th data-field=\"username\">Volunteer </th>
-                  <th data-field=\"contact\"> Contact </th>
+                  
               </tr>
             </thead>
             <tbody>";
@@ -71,7 +73,7 @@ if (mysqli_num_rows($resu) > 0) {
 			if($block!=NULL)
 			{
 			$str = explode(":",$block);
-			echo "<tr><td>".$c."</td><td>".$str[0]."</td><td>".$str[1]."</td><td>".$u."</td><td>".$n."</td></tr>";
+			echo "<tr><td>".$str[0]."</td><td>".$str[1]."</td></tr>";
 		 	
 
       }
