@@ -3,9 +3,9 @@
 echo '<header>
 <nav class="teal lighten-2">
   <ul id="slide-out" class="side-nav fixed teal lighten-2">
-  <li><a href="#" class="white-text"><i class="mdi-navigation-menu"></i>  </a></li>
+  <li><a href="volunteer/volunteer_login.php" class="white-text"><i class="mdi-navigation-menu"></i>  </a></li>
   <li><a class="white-text" href="#!"><i class="small mdi-content-report"></i>  Warnings</a></li>
-  <li><a class="white-text" href="#!"><i class="small mdi-content-sort"></i>  News</a></li>
+  <li><a class="white-text" href="../weather.php"><i class="small mdi-content-sort"></i>  News</a></li>
   <li><a class="white-text" href="#!"><i class="small mdi-communication-forum"></i>  Discussions</a></li>
   <li><a class="white-text" href="#!"><i class="small mdi-communication-invert-colors-on"></i>  Stay Safe</a></li>
   <li><a class="white-text" href="#!"><i class="small mdi-action-settings-remote"></i>  HospiConnect</a></li>
