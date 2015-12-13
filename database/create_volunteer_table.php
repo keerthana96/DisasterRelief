@@ -4,7 +4,7 @@ $servername = "localhost";
 $username = "root";
 // $password = "root";
 // $password = "9701c$%";
-$password = "opennow";
+$password = "root";
 
 $states = array("TamilNadu");
 $cities = array("TamilNadu"=>array("Chennai","Trichy"));
