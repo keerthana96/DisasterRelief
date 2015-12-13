@@ -125,11 +125,7 @@ $req = $infor[3];
   </div>
     <button class="btn waves-effect waves-light" type="submit" name="submit"><i class="mdi-content-add"></i>
     </button>
-<<<<<<< Updated upstream
     <button class="btn waves-effect waves-light" type="button" name="button" id="button"><i class="mdi-content-archive"></i>
-=======
-    <button class="btn waves-effect waves-light" type="button" name="button"><i class="mdi-content-archive"></i>
->>>>>>> Stashed changes
     </button>
 </form>
 <!-- <form id="login" method="POST" action="update_info.php">
