@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>Volunteer Login</title>
+	<title>Update Requirements</title>
   <link rel="stylesheet" type="text/css" href="../materialize/css/materialize.min.css">
   <link rel="stylesheet" type="text/css" href="../materialize/css/materialize.css">
   <script src="http://code.angularjs.org/1.2.13/angular.js"></script>
@@ -64,7 +64,7 @@ $(document).ready(function() {
           // alert("dropped");
           // alert( "Data Saved: " + msg );
           location.reload();
-        });    
+        });
 
     });
       });

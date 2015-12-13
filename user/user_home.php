@@ -24,19 +24,19 @@
   }
 
   li a.white-text {
-    font-size: 30px;
+    font-size: 23px;
   }
   </style>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script type="text/javascript" src="../materialize/js/materialize.min.js"></script>
-  <title>User Home</title>
+  <title>Home</title>
   <?php session_start(); ?>
   <script src="http://maps.googleapis.com/maps/api/js"></script>
 <script>
 function initialize() {
-  
+
   var center = new google.maps.LatLng(20.593684,78.962880);
-  
+
   var mapProp = {
 
     center: center,
@@ -44,18 +44,18 @@ function initialize() {
 
     mapTypeId:google.maps.MapTypeId.HYBRID
   };
-  
+
   var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-  
+
   var geocoder = new google.maps.Geocoder;
 
   states = [[11.00,78.00]];
-  cities = [[13.0827,80.2707]]; 
+  cities = [[13.0827,80.2707]];
 
   i=0;
-  
+
   while(states[i])
-  { 
+  {
     var pos = new google.maps.LatLng(states[i][0],states[i][1]);
     var marker=new google.maps.Marker({
      position:pos,
@@ -79,7 +79,7 @@ function initialize() {
   geocoder.geocode({'location': getpos}, function(results, status) {
     if (status === google.maps.GeocoderStatus.OK) {
       if (results[1]) {
-        
+
         var city = results[1].address_components[1]['long_name'].replace(/ /g,'');
 
         // alert(city);
@@ -90,7 +90,7 @@ function initialize() {
             window.location = "what.php";
             // alert("ready");
             // arr = "<?php echo $_SESSION['city']; ?>";
-            
+
             // alert(arr);
             //<?php
             // alert("<?php echo $_SESSION[\'city\'] ?>");
@@ -105,15 +105,15 @@ function initialize() {
         // echo "<div id=\"req\"> </div>";
 
         // if (mysqli_num_rows($resu) > 0) {
-           
-        //     while($row = mysqli_fetch_assoc($resu)) 
+
+        //     while($row = mysqli_fetch_assoc($resu))
         //     {
         //         $arr = explode(" ",$row['requirement']);
         //      echo "<table>";
         //      foreach($arr as $block)
         //      {
         //       $str = explode(":",$block);
-        //       echo "<tr> <td>".$str[0]."</td><td>".$str[1]."</td></tr>"; 
+        //       echo "<tr> <td>".$str[0]."</td><td>".$str[1]."</td></tr>";
         //      }
         //      echo "</table>";
 
@@ -146,7 +146,7 @@ function initialize() {
   });
   i++;
   }
-  
+
 }
 google.maps.event.addDomListener(window, 'load', initialize);
 
@@ -159,10 +159,10 @@ google.maps.event.addDomListener(window, 'load', initialize);
     <br><br>
    <div id="googleMap" style="width:600px;height:500px;display: inline-block;left:300px" ></div>
     <div id="info" style="width:400px;height:500px;display:inline-block;float:right;">
-        <h4 style="color:#4db6ac;text-shadow: 2px 2px black;"> Relief Management 
-        </h4> 
+        <h4 style="color:#4db6ac;text-shadow: 2px 2px black;"> Relief Management
+        </h4>
         <h6 id="he">Click on the STATE for which you would like to view relief information about. </h6>
-        
+
     </div>
 </div>
 </main>

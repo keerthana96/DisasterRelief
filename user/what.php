@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>Volunteer Login</title>
+	<title>Requirement Info</title>
   <link rel="stylesheet" type="text/css" href="../materialize/css/materialize.min.css">
   <link rel="stylesheet" type="text/css" href="../materialize/css/materialize.css">
   <script src="http://code.angularjs.org/1.2.13/angular.js"></script>
@@ -17,7 +17,7 @@
   }
 
   li a.white-text {
-      font-size: 30px;
+      font-size: 23px;
   }
 
   #req {
@@ -72,7 +72,7 @@ if (mysqli_num_rows($resu) > 0) {
 			{
 			$str = explode(":",$block);
 			echo "<tr><td>".$c."</td><td>".$str[0]."</td><td>".$str[1]."</td><td>".$u."</td><td>".$n."</td></tr>";
-		 	
+
 
       }
 		 }
