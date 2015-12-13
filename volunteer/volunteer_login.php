@@ -11,6 +11,8 @@
     min-height: 100vh;
     flex-direction: column;
     background-image: url("../two.jpg");
+    background-repeat: no-repeat;
+    background-
 
   }
 
@@ -71,7 +73,7 @@
   <form class="col s6 right" id="login" method="POST" action="volunteer_auth.php">
     <div class="row">
       <div class="input-field col s6" style:"color:white;text-style:bold;">
-        <input name="username" type="text" class="validate" required>
+        <input name="username" type="text" class="white-text validate" required>
         <label for="username">User Name</label>
       </div>
     </div>

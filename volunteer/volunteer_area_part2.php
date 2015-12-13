@@ -106,6 +106,8 @@ $req = $infor[3];
   </div>
     <button class="btn waves-effect waves-light" type="submit" name="submit"><i class="mdi-content-add"></i>
     </button>
+    <button class="btn waves-effect waves-light" type="button" name="button"><i class="mdi-content-archive"></i>
+    </button>
 </form>
 <!-- <form id="login" method="POST" action="update_info.php">
 	<table>
